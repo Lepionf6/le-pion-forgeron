@@ -1,2 +1,2 @@
 # le-pion-forgeron
-Club d'échecs de Commentry
+Club d'échecs de Commentry dans l'Allier
