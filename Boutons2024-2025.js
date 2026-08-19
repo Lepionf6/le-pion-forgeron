@@ -6,7 +6,7 @@ for (var i = 0; i<10; i++ ) {bouton1[i] = new Image();}
 bouton1[0].src = "Boutons/presentation1.jpg";
 bouton1[1].src = "Boutons/archives1.jpg";
 bouton1[2].src = "Boutons/2024-20251.jpg";
-bouton1[3].src = "Boutons/Membres1.jpg";
+bouton1[3].src = "Boutons/membres1.jpg";
 bouton1[4].src = "Boutons/tournois1.jpg";
 bouton1[5].src = "Boutons/stands1.jpg";
 bouton1[6].src = "Boutons/crepes1.jpg";
@@ -18,7 +18,7 @@ for (var i = 0; i<10; i++ ) {bouton2[i] = new Image();}
 bouton2[0].src = "Boutons/presentation2.jpg";
 bouton2[1].src = "Boutons/archives2.jpg";
 bouton2[2].src = "Boutons/2024-20252.jpg";
-bouton2[3].src = "Boutons/Membres2.jpg";
+bouton2[3].src = "Boutons/membres2.jpg";
 bouton2[4].src = "Boutons/tournois2.jpg";
 bouton2[5].src = "Boutons/stands2.jpg";
 bouton2[6].src = "Boutons/crepes2.jpg";
