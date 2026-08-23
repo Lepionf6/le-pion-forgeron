@@ -9,20 +9,38 @@ image1[3].src = "Nuit echecs/Nuit des echecs 4.jpg";
 image1[4].src = "Nuit echecs/Resultats nuit des echecs.jpg";
 
 //duree de changement d'images
-delaiImage = 4.;var numeroImage = 1;
+delaiImage1 = 4.;var numeroImage1 = 1;
+
+// variables de pause
+var pauseImage1 = false;
 
 //changement des photos des événements
-function changePhoto(photo){
+function changePhoto1(photo){
 	document.images[16].src = image1[photo].src;
 }
 
-function incrementationImage() {
-	changePhoto(numeroImage);
-	numeroImage++;
-	if (numeroImage == 5) {
-		numeroImage = 0;
+function incrementationImage1() {
+	if (!pauseImage1) {
+		changePhoto1(numeroImage1);
+		numeroImage1++;
+		if (numeroImage1 == 5) {
+			numeroImage1 = 0;
+		}
 	}
-	setTimeout("incrementationImage()",delaiImage*1000);
+	setTimeout("incrementationImage1()",delaiImage1*1000);
 }
-setTimeout("incrementationImage()",delaiImage*1000);
+
+// Pause / reprise au passage de la souris
+document.images[16].onmouseover = function() {
+    pauseImage1 = true;
+};
+
+document.images[16].onmouseout = function() {
+    pauseImage1 = false;
+};
+
+
+// lancement des diaporamas
+setTimeout("incrementationImage1()",delaiImage1*1000);
+
 
