@@ -11,6 +11,31 @@
 <!-- Les balises pour le moteur de recherche -->
 <meta name="2025-2026 Nuit" content="Le Pion Forgeron">
 
+<style>
+    .titre-oscillant {
+        width: 100%;
+        height: 80px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #titrePionForgeron {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        white-space: nowrap;
+
+        font-family: Arial, sans-serif;
+        font-size: 50px;
+        font-weight: bold;
+        font-style: italic;
+        color: #990000;
+
+        will-change: transform;
+    }
+</style>
+
 <table width=100% cellpadding=0 cellspacing=0 border=0 >
 
 <!-- filet doré tracé par une ligne mince -->
@@ -35,19 +60,16 @@
 
 <tr align=left>
 	<td align=center width=20% height=18%>
-		<img src="../Photos/Embleme.jpg" width=30% border=1>
+		<a class="Embleme" href=../index.html>
+		<img src="../Photos/Embleme.jpg" alt="Embleme" width=110>
 	</td>
-	<td align=center width=59%>
-		<font face=Arial size=7 color=#990000><i><b>
-		<center><marquee scrollamount="2" scrolldelay="20";
-		"height="80" width=80%; text-align:left; font-weight:bold; font-style:italic" 
-		behavior="alternate"">
-		LE PION FORGERON
-		</marquee></center></b> </i></font>
+	<td align="center" width="59%">
+    		<div class="titre-oscillant">
+        		<span id="titrePionForgeron">LE PION FORGERON</span>
+    		</div>
 	</td>
-
         <td align=center width=20% height=18%>
-		<a href="https://www.facebook.com/Lepionforgeron/">
+		<a class="facebook" href="https://www.facebook.com/Lepionforgeron/">
 		<img src="../Photos/facebook.jpg" alt="Facebook" width=110>
 		</a>
 	</td>
@@ -70,6 +92,45 @@
 </tr>
 
 </table>
+
+<style>
+    .email {
+        color: black;
+        text-decoration: none;
+    }
+
+    .email:hover {
+        color: #990000;
+        text-decoration: underline;
+    }
+</style>
+
+<style>
+    .facebook {
+        display: inline-block;
+        border: 2px solid transparent;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .facebook:hover {
+        border-color: #990000;
+        transform: scale(1.08);
+    }
+</style>
+
+<style>
+    .Embleme {
+        display: inline-block;
+        border: 2px solid transparent;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .Embleme:hover {
+        border-color: #990000;
+        transform: scale(1.08);
+    }
+</style>
+
 </head>
 
 <!-------------------------------->
@@ -242,6 +303,8 @@
 
 <script src="BoutonsArchives2025-2026.js" type="text/javascript"></script>
 <script src="Nuit echecs/ImagesNuitEchecs.js" type="text/javascript"></script>
+<script src="../Titre.js" type="text/javascript"></script>
+
 <!------------------------->
 <!--  Pied de page       -->
 <!------------------------->
