@@ -16,22 +16,65 @@ avantdernier[3].src = "Evenements/Avant dernier3.jpg";
 avantdernier[4].src = "Evenements/Avant dernier4.jpg";
 
 //duree de changement d'images
-delaiDernier = 4.;var photoDernier = 1;
+delaiDernier = 4.;var numeroDernier = 1;
+delaiAvantdernier = 4.;var numeroAvantdernier = 1;
+
+
+// variables de pause
+var pauseDernier = false;
+var pauseAvantdernier = false;
+
 
 //changement des photos des événements
 function changePhoto(photo){
 	document.images[10].src = dernier[photo].src;
-        document.images[12].src = avantdernier[photo].src;
 }
 
 function incrementationDernier() {
-	changePhoto(photoDernier);
-	photoDernier++;
-	if (photoDernier == 5) {
-		photoDernier = 0;
+	 if (!pauseDernier) {
+		changePhoto(numeroDernier);
+		numeroDernier++;
+		if (numeroDernier == 5) {
+			numeroDernier = 0;
+		}
 	}
 	setTimeout("incrementationDernier()",delaiDernier*1000);
 }
 
-setTimeout("incrementationDernier()",delaiDernier*1000);
+function changePhoto2(photo){
+	document.images[12].src = avantdernier[photo].src;
+}
 
+function incrementationAvantdernier() {
+	 if (!pauseAvantdernier) {
+		changePhoto2(numeroAvantdernier);
+		numeroAvantdernier++;
+		if (numeroAvantdernier == 5) {
+			numeroAvantdernier = 0;
+		}
+	}
+
+	setTimeout("incrementationAvantdernier()",delaiAvantdernier*1000);
+}
+
+// Pause / reprise au passage de la souris
+document.images[10].onmouseover = function() {
+    pauseDernier = true;
+};
+
+document.images[10].onmouseout = function() {
+    pauseDernier = false;
+};
+
+document.images[12].onmouseover = function() {
+    pauseAvantdernier = true;
+};
+
+document.images[12].onmouseout = function() {
+    pauseAvantdernier = false;
+};
+
+
+// lancement des diaporamas
+setTimeout("incrementationDernier()",delaiDernier*1000);
+setTimeout("incrementationAvantdernier()",delaiAvantdernier*1000);

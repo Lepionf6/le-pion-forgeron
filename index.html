@@ -36,7 +36,7 @@
 
 <tr align=left>
 	<td align=center width=20% height=18%>
-		<img src="Photos/Embleme.jpg" width=30% border=1>
+		<img src="Photos/Embleme.jpg" width=110 border=1>
 	</td>
 	<td align=center width=59%>
 		<h1>Le Pion Forgeron<br>Club d'échecs de Commentry</h1>
@@ -48,7 +48,7 @@
 
         <td align=center width=20% height=18%>
 		Le Pion Forgeron sur Facebook<br>
-		<a href="https://www.facebook.com/Lepionforgeron/">
+		<a class="facebook" href="https://www.facebook.com/Lepionforgeron/">
 		<img src="Photos/facebook.jpg" alt="Facebook" width=110>
 		</a>
 	</td>
@@ -70,9 +70,33 @@
 	</td>
 </tr>
 
-
-
 </table>
+
+<style>
+    .email {
+        color: black;
+        text-decoration: none;
+    }
+
+    .email:hover {
+        color: #990000;
+        text-decoration: underline;
+    }
+</style>
+
+<style>
+    .facebook {
+        display: inline-block;
+        border: 2px solid transparent;
+        transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .facebook:hover {
+        border-color: #990000;
+        transform: scale(1.08);
+    }
+</style>
+
 </head>
 
 
@@ -190,10 +214,25 @@
 			Présidence : Yvon Mongendre
 			<br><i class="fa fa-phone"></i>  06 64 80 06 99
 			<br><br><br>
-			Contact
-			<br><i class="fa fa-envelope"></i> yvon.mongendre@hotmail.fr
-			<br><i class="fa fa-envelope"></i> sebalonso@outlook.fr
-			<br><i class="fa fa-envelope"></i> cpderegnaucourt@sfr.fr
+			Contacts
+			<br>
+			<i class="fa fa-envelope"></i>
+			<a class="email" href="mailto:yvon.mongendre@hotmail.fr">
+    			 yvon.mongendre@hotmail.fr
+			</a>
+
+			<br>
+			<i class="fa fa-envelope"></i>
+			<a class="email" href="mailto:sebalonso@outlook.fr">
+    			 sebalonso@outlook.fr
+			</a>
+
+			<br>
+			<i class="fa fa-envelope"></i>
+			<a class="email" href="mailto:cpderegnaucourt@sfr.fr">
+    			 cpderegnaucourt@sfr.fr
+			</a>
+
 			<br><br>
 			</font>
 		</td>
