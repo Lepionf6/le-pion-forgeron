@@ -10,37 +10,63 @@ image2[0].src = "Crepes echecs/Crepes echecs 4.jpg";
 image2[1].src = "Crepes echecs/Crepes echecs 3.jpg";
 
 //duree de changement d'images
-delaiImage = 4.;var numeroImage = 1;
+delaiImage1 = 4.;var numeroImage1 = 1;
 delaiImage2 = 4.;var numeroImage2 = 1;
 
+// variables de pause
+var pauseImage1 = false;
+var pauseImage2 = false;
+
 //changement des photos des événements
-function changePhoto(photo){
+function changePhoto1(photo){
 	document.images[9].src = image1[photo].src;
 }
 
-function incrementationImage() {
-	changePhoto(numeroImage);
-	numeroImage++;
-	if (numeroImage == 2) {
-		numeroImage = 0;
+function incrementationImage1() {
+	if (!pauseImage1) {
+		changePhoto1(numeroImage1);
+		numeroImage1++;
+		if (numeroImage1 == 2) {
+			numeroImage1 = 0;
+		}
 	}
-	setTimeout("incrementationImage()",delaiImage*1000);
+	setTimeout("incrementationImage1()",delaiImage1*1000);
 }
 
-function changePhoto2(photo2){
-        document.images[10].src = image2[photo2].src;
+function changePhoto2(photo){
+        document.images[10].src = image2[photo].src;
 }
 
 function incrementationImage2() {
-	changePhoto2(numeroImage2);
-	numeroImage2++;
-	if (numeroImage2 == 2) {
-		numeroImage2 = 0;
+	if (!pauseImage2) {
+		changePhoto2(numeroImage2);
+		numeroImage2++;
+		if (numeroImage2 == 2) {
+			numeroImage2 = 0;
+		}	
 	}
 	setTimeout("incrementationImage2()",delaiImage2*1000);
 }
 
-setTimeout("incrementationImage()",delaiImage*1000);
+// Pause / reprise au passage de la souris
+document.images[9].onmouseover = function() {
+    pauseImage1 = true;
+};
+
+document.images[9].onmouseout = function() {
+    pauseImage1 = false;
+};
+
+document.images[10].onmouseover = function() {
+    pauseImage2 = true;
+};
+
+document.images[10].onmouseout = function() {
+    pauseImage2 = false;
+};
+
+// lancement des diaporamas
+setTimeout("incrementationImage1()",delaiImage1*1000);
 setTimeout("incrementationImage2()",delaiImage2*1000);
 
 
