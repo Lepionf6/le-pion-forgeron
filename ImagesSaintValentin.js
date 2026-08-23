@@ -1,22 +1,19 @@
 //chargement des images du dernier événement et de l'avant-dernier évenement
 var image1 = new Array();var image2 = new Array();
 
-for (var i = 0; i<5; i++ ) {image1[i] = new Image();}
-image1[0].src = "Membres/Membres 0.jpg";
-image1[1].src = "Membres/Membres.jpg";
-image1[2].src = "Membres/Membres 2.jpg";
-image1[3].src = "Membres/Membres 1.jpg";
-image1[4].src = "Membres/Membres 7.jpg";
+for (var i = 0; i<2; i++ ) {image1[i] = new Image();}
+image1[0].src = "Saint valentin/Affiche saint valentin.jpg";
+image1[1].src = "Saint valentin/Saint valentin 5.jpg";
 
-for (var i = 0; i<4; i++ ) {image2[i] = new Image();}
-image2[0].src = "Membres/Membres 3.jpg";
-image2[1].src = "Membres/Membres 4.jpg";
-image2[2].src = "Membres/Membres 5.jpg";
-image2[3].src = "Membres/Membres 6.jpg";
+for (var i2 = 0; i2<4; i2++ ) {image2[i2] = new Image();}
+image2[0].src = "Saint valentin/Saint valentin 4.jpg";
+image2[1].src = "Saint valentin/Saint valentin 3.jpg";
+image2[2].src = "Saint valentin/Saint valentin 2.jpg";
+image2[3].src = "Saint valentin/Resultats saint valentin.jpg";
 
 //duree de changement d'images
-delaiImage1 = 4.;var numeroImage1 = 1;
-delaiImage2 = 5.;var numeroImage2 = 1;
+delaiImage1 = 6.;var numeroImage1 = 1;
+delaiImage2 = 3.;var numeroImage2 = 1;
 
 // variables de pause
 var pauseImage1 = false;
@@ -31,7 +28,7 @@ function incrementationImage1() {
 	if (!pauseImage1) {
 		changePhoto1(numeroImage1);
 		numeroImage1++;
-		if (numeroImage1 == 5) {
+		if (numeroImage1 == 2) {
 			numeroImage1 = 0;
 		}
 	}
