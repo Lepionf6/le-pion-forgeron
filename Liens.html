@@ -1,265 +1,355 @@
-<html>
-
-<!------------------------->
-<!--  Début de l'en-tête -->
-<!------------------------->
-
+<!DOCTYPE html>
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Liens - Le Pion Forgeron, club d'échecs de Commentry</title>
-
-<!-- Les balises pour le moteur de recherche -->
-<meta name="description" content="Le Pion Forgeron">
+<meta name="liens" content="Le Pion Forgeron">
 
 <style>
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; }
+
+    body {
+        font-family: Arial, sans-serif;
+        color: #000;
+        background: url("Photos/Fond écran.png") repeat;
+    }
+
+    /* Filets dorés horizontaux */
+    .filet-dore {
+        height: 2px;
+        background: #CC9900;
+        width: 100%;
+    }
+
+    .espace-fin { height: 2px; }
+    .espace-large { height: 10px; }
+    .espace-tres-large { height: 30px; }
+    .espace-extra-large { height: 80px; }
+
+
+    /* EN-TÊTE : 20% / 60% / 20%.
+       Le titre est confiné à la colonne centrale et ne peut pas passer sous Facebook. */
+    .entete {
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        align-items: center;
+        min-height: 110px;
+        padding: 3px 0;
+    }
+
+    .entete-case {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 0;
+    }
+
+    .entete-case img { display: block; }
+
     .titre-oscillant {
         width: 100%;
         height: 80px;
         overflow: hidden;
         position: relative;
-	display: flex;
-	align-items: center;
+        display: flex;
+        align-items: center;
     }
 
     #titrePionForgeron {
-        position: absolute;-
+        position: absolute;
         left: 0;
-   
+        top: 50%;
         white-space: nowrap;
-
+        transform: translate(0, -50%);
         font-family: Arial, sans-serif;
-        font-size: 50px;
+        font-size: clamp(50px, 4vw, 50px);
         font-weight: bold;
         font-style: italic;
         color: #990000;
-
-        will-change: transform;
-    }
-</style>
-
-<table width=100% cellpadding=0 cellspacing=0 border=0 >
-
-<!-- filet doré tracé par une ligne mince -->
-<tr>
-	<td colspan=3 bgcolor=#CC9900 width=100% height=2 align=left>
-	</td>
-</tr>
-<tr>
-	<td colspan=3  width=100% height=2 align=left>
-	</td>
-</tr>
-
-<!-- filet doré tracé par une ligne mince -->
-<tr>
-	<td colspan=3 bgcolor=#CC9900 width=100% height=2 align=left>
-	</td>
-</tr>
-<tr>
-	<td colspan=3 width=100% height=10 align=left>
-	</td>
-</tr>
-
-<tr align=left>
-	<td align=center width=20% height=18%>
-		<a class="Embleme" href=index.html>
-		<img src="Photos/Embleme.jpg" alt="Embleme" width=110>
-	</td>
-	<td align="center" width="59%">
-    		<div class="titre-oscillant">
-        		<span id="titrePionForgeron">LE PION FORGERON</span>
-    		</div>
-	</td>
-        <td align=center width=20% height=18%>
-		<a class="facebook" href="https://www.facebook.com/Lepionforgeron/">
-		<img src="Photos/facebook.jpg" alt="Facebook" width=110>
-		</a>
-	</td>
-</tr>
-
-<tr>
-	<td colspan=3 width=100% height=10 align=left>
-	</td>
-</tr>
-<!-- filet doré tracé par une ligne mince -->
-<tr>
-	<td colspan=3 bgcolor=#CC9900 width=100% height=2 align=left>
-	</td>
-</tr>
-
-<!-- filet tracé par une ligne vide mince -->
-<tr>
-	<td colspan=3 width=100% height=2 align=left>
-	</td>
-</tr>
-
-</table>
-
-<style>
-    .email {
-        color: black;
-        text-decoration: none;
     }
 
-    .email:hover {
+ /* Passage souris sur images "facebook" et "Embleme"  */
+    .facebook, .Embleme {
+        display: inline-block;
+        border: 2px solid transparent;
+        transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .facebook:hover, .Embleme:hover {
+        border-color: #990000;
+        transform: scale(1.08);
+    }
+ 
+
+    /* CORPS : menu + zone principale */
+    .corps {
+        display: grid;
+        grid-template-columns: 150px 3px 3px 3px minmax(0, 1fr);
+        align-items: stretch;
+        width: 100%;
+    }
+
+    /* Deux filets dorés verticaux séparant le menu de la zone centrale. */
+    .separateur-dore-vertical {
+        background: #CC9900;
+        min-height: 100%;
+    }
+
+    .separateur-vide { background: transparent; }
+
+    .menu {
+        text-align: center;
+        padding-top: 5px;
+    }
+
+    .menu a {
+        display: block;
+        width: max-content;
+        margin: 0 auto 18px auto;
+        line-height: 0;
+    }
+
+    .menu img {
+        display: block;
+        height: auto;
+        border: 1px solid #000;
+    }
+
+    /* Le bouton "page en cours" est volontairement plus large que les autres avec cadre rouge spécifique */
+    .menu .bouton-page {
+        width: 130px ;
+        border: 4px solid #990000 ;
+    }
+
+    .menu .bouton-standard {
+        width: 110px;
+	border: 1px solid black ;
+    }
+
+  /* Passage souris sur les boutons du menu */
+   .Presentation,  .Tournois, .Evenements, .Liens, .Tarifs, .Archives, .Mentions{
+        display: inline-block;
+        border: 1px solid transparent;
+        transition: transform .25s ease, border-color .25s ease;
+    }
+
+    .Presentation:hover,  .Tournois:hover
+, .Evenements:hover/*, .Liens:hover*/, .Tarifs:hover, .Archives:hover, .Mentions:hover {
+         border: 2px solid #990000;
+        transform: scale(1.06);
+    }
+
+  .menu .mentions {
+        margin-top: 20px;
+    }
+
+    /* Zone fenêtre principale */
+    .fenetre {
+        min-width: 0;
+        padding: 0 0 8px 0;
+    }
+
+    .grille-fenetre {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        width: 100%;
+        align-items: start;
+    }
+
+    .case-fenetre-1, .case-fenetre-2 {
+        min-width: 0;
+        text-align: center;
+        padding: 10px 8px;
+        border-bottom: 2px solid transparent;
+    }
+
+    /* Deux filets transparents verticaux entre les trois colonnes. */
+    .case-resultat:nth-child(3n+2),
+    .case-resultat:nth-child(3n+3) {
+        border-left: 2px solid transparent;
+    }
+							
+    .case-fenetre-1 img {
+        display: inline-block;
+        height: auto;
+        max-width: 100%;
+        border: 5px solid blue;
+    }
+
+    .case-fenetre-2 img {
+        display: inline-block;
+        height: auto;
+        max-width: 90%;
+        border: 5px solid #A349A4;
+    }
+
+    .FFE, .FCC, .Chess, .Lichess {
+        font-family: Arial, sans-serif;
+        font-size: clamp(30px, 4vw, 50px);
+        font-style: italic;
         color: #990000;
-        text-decoration: underline;
     }
-</style>
 
-<style>
-    .facebook {
+  /* Passage souris sur les liens */
+   .FFE, .FCC, .Chess, .Lichess {
         display: inline-block;
-        border: 2px solid transparent;
-        transition: transform 0.25s ease, border-color 0.25s ease;
+        border: 1px solid transparent;
+        transition: transform .25s ease, border-color .25s ease;
     }
 
-    .facebook:hover {
-        border-color: #990000;
-        transform: scale(1.08);
-    }
-</style>
-
-<style>
-    .Embleme {
-        display: inline-block;
-        border: 2px solid transparent;
-        transition: transform 0.25s ease, border-color 0.25s ease;
+    .FFE:hover, .FCC:hover, .Chess:hover, .Lichess:hover {
+        border: 2px solid #990000;
+        transform: scale(1.06);
     }
 
-    .Embleme:hover {
-        border-color: #990000;
-        transform: scale(1.08);
+
+    .fenetre img { width: 95%; }
+
+    /* Sur petit écran, les colonnes se réduisent progressivement. */
+    @media (max-width: 1000px) {
+        .entete { grid-template-columns: 25% 50% 25%; }
+        .corps { grid-template-columns: 105px 2px 2px 2px minmax(0, 1fr); }
+        .menu .bouton-standard { width: 90px; }
+        .menu .bouton-page { width: 100px ; }
+        #titrePionForgeron {font-size: clamp(15px, 4vw, 50px); }
+    }
+
+    @media (max-width: 700px) {
+        .entete { grid-template-columns: 1fr 2fr 1fr; }
+        .entete-case img { max-width: 90px; }
+        .corps { grid-template-columns: 100px 2px 2px 2px minmax(0, 1fr); }
+        .menu .bouton-standard { width: 88px; }
+        .menu .bouton-page { width: 95px ; }
+        .grille-fenetre { grid-template-columns: 1fr; }
+        .case-fenetre-1,
+        .case-fenetre-1:nth-child(3n+2),
+        .case-fenetre-1:nth-child(3n+3) {
+            border-left: 0;
+            border-bottom: 2px solid transparent;
+        }
+        .case-fenetre-2,
+        .case-fenetre-2:nth-child(3n+2),
+        .case-fenetre-2:nth-child(3n+3) {
+            border-left: 0;
+            border-bottom: 2px solid transparent;
+        }
+
     }
 </style>
 
 </head>
 
+<body link="#990000" vlink="#990000">
 
-<!-------------------------------->
-<!--  Début du corps de la page -->
-<!-------------------------------->
-<body  link=#990000 vlink=#990000 background="Photos/Fond écran.png" width=100%>
+<!-- EN-TÊTE -->
+<div class="filet-dore"></div>
+<div class="espace-fin"></div>
+<div class="filet-dore"></div>
+<div class="espace-large"></div>
 
-<table width=100% border=0 cellspacing=0 cellpadding=0>
-<!-- filet doré tracé par une ligne mince -->
-<tr>
-	<td colspan=10 bgcolor=#CC9900 width=100% height=2 align=left>
-	</td>
-</tr>
+<header class="entete">
+    <div class="entete-case">
+        <a class="Embleme" href="index.html">
+            <img src="Photos/Embleme.jpg" alt="Emblème" width="110">
+        </a>
+    </div>
 
-<table width=100% border=0 height=3 cellspacing=0 cellpadding=0>
+    <div class="entete-case">
+        <div class="titre-oscillant" id="zoneTitre">
+            <span id="titrePionForgeron">LE PION FORGERON</span>
+        </div>
+    </div>
 
-<tr>
-	<td width=200  align=center valign=top >
-		<font face=Arial size=3>
-		<br>
-		<a href="Presentation.html"
-			onmouseout=changeBouton1(1)
-			onmouseover=changeBouton2(1)>
-			<img src="Boutons/presentation1.jpg" alt="Présentation" width=110 border=1> 
-		</a>
-		<br><br>
+    <div class="entete-case">
+        <a class="facebook" href="https://www.facebook.com/Lepionforgeron/">
+            <img src="Photos/facebook.jpg" alt="Facebook" width="110">
+        </a>
+    </div>
+</header>
 
-		<a href="Tournois.html"
-			onmouseout=changeBouton1(2)
-			onmouseover=changeBouton2(2)>
-			<img src="Boutons/tournois1.jpg" alt="Tournoi officiel" width=110 border=1>
-		</a>
-		<br><br>
+<div class="espace-large"></div>
+<div class="filet-dore"></div>
+<div class="espace-fin"></div>
+<div class="filet-dore"></div>
 
-		<a href="Evenements.html"
-			onmouseout=changeBouton1(3)
-			onmouseover=changeBouton2(3)>
-			<img src="Boutons/evenements1.jpg" alt="Evénement" width=110 border=1>
-		</a>
-		<br><br>
+<!-- CORPS -->
+<main class="corps">
+    <nav class="menu" aria-label="Menu principal">
+	<div class="espace-large"></div>
 
-		<a href="Liens.html"
-			onmouseout=changeBouton2(4)
-			onmouseover=changeBouton2(4)>
-			<img src="Boutons/liens2.jpg" alt="Liens utiles" width=130 border=5>
-		</a>
-		<br><br>
+        <a class="Presentation" href="Presentation.html" onmouseout="changeBouton1(1)" onmouseover="changeBouton2(1)">
+            <img class="bouton-standard" src="Boutons/presentation1.jpg" alt="Présentation" >
+        </a>
 
-		<a href="Tarifs.html"
-			onmouseout=changeBouton1(5)
-			onmouseover=changeBouton2(5)>
-			<img src="Boutons/tarifs1.jpg" alt="Tarifs" width=110 border=1>
-		</a>
-		<br><br>
+        <a class="Tournois" href="Tournois.html" onmouseout="changeBouton1(2)" onmouseover="changeBouton2(2)">
+            <img class="bouton-standard" src="Boutons/tournois1.jpg" alt="Tournoi officiel" >
+        </a>
 
-		<a href="Archives.html"
-			onmouseout=changeBouton1(6)
-			onmouseover=changeBouton2(6)>
-			<img src="Boutons/archives1.jpg" alt="Archives" width=110 border=1>
-		</a>
-		<br><br><br><br>
+        <a class="Evenements" href="Evenements.html" onmouseout="changeBouton1(3)" onmouseover="changeBouton2(3)">
+            <img class="bouton-standard" src="Boutons/evenements1.jpg" alt="Événement">
+        </a>
 
-		<a href="Mentions.html"
-			onmouseout=changeBouton1(7)
-			onmouseover=changeBouton2(7)>
-			<img src="Boutons/mentions1.jpg" alt="Mentions légales" width=110 border=1>
-		</a>
-		<br>
-	</td>
+        <a class="Liens" href="Liens.html" onmouseout="changeBouton2(4)" onmouseover="changeBouton2(4)">
+            <img class="bouton-page" src="Boutons/liens2.jpg" alt="Liens utiles">
+        </a>
 
-	<td width=3  valign=top bgcolor=#CC9900>
-	</td>
+        <a class="Tarifs" href="Tarifs.html" onmouseout="changeBouton1(5)" onmouseover="changeBouton2(5)">
+            <img class="bouton-standard" src="Boutons/tarifs1.jpg" alt="Tarifs">
+        </a>
 
-	<td width=3  valign=top >
-	</td>
+        <a class="Archives" href="Archives.html" onmouseout="changeBouton1(6)" onmouseover="changeBouton2(6)">
+            <img class="bouton-standard" src="Boutons/archives1.jpg" alt="Archives">
+        </a>
 
-	<td width=3  valign=top bgcolor=#CC9900>
-	</td>
+	<div class="espace-tres-large"></div>
 
-	<td width=90%  valign=center align=center colspan3>
-		<br><br>
+        <a class="Mentions" class="mentions" href="Mentions.html" onmouseout="changeBouton1(7)" onmouseover="changeBouton2(7)">
+            <img class="bouton-standard" src="Boutons/mentions1.jpg" alt="Mentions légales">
+        </a>
+    </nav>
+
+    <div class="separateur-dore-vertical"></div>
+    <div class="separateur-vide"></div>
+    <div class="separateur-dore-vertical"></div>
+
+   <section class="fenetre" aria-label="Liens">
+	<div class="espace-tres-large"></div>
+        <div class="grille-fenetre">
+            <div class="case-fenetre-1">
+ 		<a class="FFE" href="https://www.echecs.asso.fr/">Fédération Française des Echecs</a>
+            </div>
+	    <div class="espace-extra-large"></div>
+            <div class="case-fenetre-1">
+		<a class="FCC" href="https://www.facebook.com/Foyer-Culturel-de-Commentry-FCEA-232178413510222/">Foyer Culturel de Commentry</a>               
+            </div>
+	    <div class="espace-extra-large"></div>
+            <div class="case-fenetre-1">
 		<font face=Arial size=6 color=#000000 align=center>
-
-		<a href="https://www.echecs.asso.fr/">Fédération Française des Echecs</a>
-		<br><br><br>
-
-		<a href="https://www.facebook.com/Foyer-Culturel-de-Commentry-FCEA-232178413510222/">Foyer Culturel de Commentry</a>
-		<br><br><br><br>
-
-		<b><u>Pour jouer en ligne</u></b>
-		<br><br>
-
-		<a href="https://www.chess.com/home">Chess.com</a>
-		<br><br>
-
-		<a href="https://lichess.org/">Lichess.org</a>
-		<br>&nbsp;
+                	<b><u>Pour jouer en ligne</u></b>
 		</font>
-	</td>	
-</tr>
+            </div>
+	    <div class="espace-large"></div>
+            <div class="case-fenetre-1">
+                <a class="Chess" href="https://www.chess.com/home">Chess.com</a>
+            </div>
+            <div class="case-fenetre-1">
+               <a class="Lichess" href="https://lichess.org/">Lichess.org</a> 
+            </div>
+	    <div class="espace-large"></div>
+         </div>
+    </section>
+</main>
 
-<!-- filet doré tracé par une ligne mince -->
-<tr>
-	<td colspan=7 bgcolor=#CC9900 width=100% height=2 align=left>
-	</td>
-</tr>
-
-<!-- filet tracé par une ligne vide mince -->
-<tr>
-	<td colspan=7  width=100% height=2 align=left>
-	</td>
-</tr>
-
-
-<!-- filet doré tracé par une ligne mince -->
-<tr>
-	<td colspan=7 bgcolor=#CC9900 width=100% height=2 align=left>
-	</td>
-</tr>
-
-</table>
+<!-- Deux filets dorés de bas de page -->
+<div class="filet-dore"></div>
+<div class="espace-fin"></div>
+<div class="filet-dore"></div>
 
 <script src="Boutons.js" type="text/javascript"></script>
 <script src="Titre.js" type="text/javascript"></script>
 
-<!------------------------->
-<!--  Pied de page       -->
-<!------------------------->
 </body>
-</html> 
+</html>

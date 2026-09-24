@@ -1,40 +1,45 @@
-function animerTitre() {
-
-    const zone = document.querySelector('.titre-oscillant');
+/* Oscillation précise du titre dans sa seule zone centrale. */
+(function () {
+    const zone = document.getElementById('zoneTitre');
     const titre = document.getElementById('titrePionForgeron');
-
     if (!zone || !titre) return;
 
-    // Largeur disponible dans la zone
-    const largeurZone = zone.clientWidth;
+    let direction = 1;
+    let position = 0;
+    let dernier = null;
+    const vitesse = 45; // pixels/seconde
 
-    // Largeur réelle du texte
-    const largeurTitre = titre.offsetWidth;
+    function limite() {
+        return Math.max(0, zone.clientWidth - titre.offsetWidth);
+    }
 
-    // Distance exacte à parcourir
-    const distance = Math.max(0, largeurZone - largeurTitre);
+    function animation(temps) {
+        if (dernier === null) dernier = temps;
+        const dt = Math.min(50, temps - dernier) / 1000;
+        dernier = temps;
 
-    // Durée de l'aller-retour en secondes
-    const duree = 10;
+        const max = limite();
+        position += direction * vitesse * dt;
 
-    titre.animate(
-        [
-            { transform: 'translateX(0px)' },
-            { transform: 'translateX(' + distance + 'px)' }
-        ],
-        {
-            duration: duree * 1000,
-            iterations: Infinity,
-            direction: 'alternate',
-            easing: 'ease-in-out'
+        if (position >= max) {
+            position = max;
+            direction = -1;
+        } else if (position <= 0) {
+            position = 0;
+            direction = 1;
         }
-    );
-}
 
+        titre.style.transform = 'translate(' + position + 'px, -50%)';
+        requestAnimationFrame(animation);
+    }
 
-// Lancement lorsque la page est chargée
-window.addEventListener('load', animerTitre);
+    /* Recalcule la position si la fenêtre change de taille. */
+    window.addEventListener('resize', function () {
+        position = Math.min(position, limite());
+    });
 
+    /* Désactive l'animation CSS pour laisser le JS la piloter précisément. */
+    titre.style.animation = 'none';
+    requestAnimationFrame(animation);
+})();
 
-// Recalcul lors d'un changement de taille de fenêtre
-window.addEventListener('resize', animerTitre);

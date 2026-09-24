@@ -27,7 +27,7 @@ var pauseAvantdernier = false;
 
 //changement des photos des événements
 function changePhoto(photo){
-	document.images[10].src = dernier[photo].src;
+	document.images[11].src = dernier[photo].src;
 }
 
 function incrementationDernier() {
@@ -58,11 +58,11 @@ function incrementationAvantdernier() {
 }
 
 // Pause / reprise au passage de la souris
-document.images[10].onmouseover = function() {
+document.images[11].onmouseover = function() {
     pauseDernier = true;
 };
 
-document.images[10].onmouseout = function() {
+document.images[11].onmouseout = function() {
     pauseDernier = false;
 };
 

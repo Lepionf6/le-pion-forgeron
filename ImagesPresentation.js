@@ -9,7 +9,7 @@ image1[3].src = "Photos/Culture sports 4.jpg";
 
 
 //duree de changement d'images
-delaiImage1 = 3.;var numeroImage1 = 2;
+delaiImage1 = 4.;var numeroImage1 = 0;
 
 // variables de pause
 var pauseImage1 = false;
@@ -23,7 +23,7 @@ function incrementationImage1() {
 	if (!pauseImage1) {
 		changePhoto1(numeroImage1);
 		numeroImage1++;
-		if (numeroImage1 == 4) {
+		if (numeroImage1 == 2) {
 			numeroImage1 = 0;
 		}
 	}
