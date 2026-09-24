@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stands 2026-2027, Le Pion Forgeron à Commentry</title>
-<meta name="2026-2027 Stands" content="Le Pion Forgeron">
+<title>Archives 2026-2027, Le Pion Forgeron à Commentry</title>
+<meta name="2026-2027" content="Le Pion Forgeron">
 
 <style>
     * { box-sizing: border-box; }
@@ -14,7 +14,7 @@
     body {
         font-family: Arial, sans-serif;
         color: #000;
-        background: url("../Photos/Fond écran.png") repeat;
+        background: url("Photos/Fond écran.png") repeat;
     }
 
     /* Filets dorés horizontaux */
@@ -136,7 +136,7 @@
         transition: transform .25s ease, border-color .25s ease;
     }
 
-   .Presentation:hover, .Archives:hover/*, .Saison-2026-2027:hover*/, .Membres-2026-2027:hover, .Tournois-2026-2027:hover/*, .Stands-2026-2027:hover*/, .Halloween-2026-2027:hover, .Noel-2026-2027:hover, .Crepes-2026-2027:hover, .Valentin-2026-2027:hover, .Nuit-2026-2027:hover, .Triclub-2026-2027:hover, .Mentions:hover {
+   .Presentation:hover, .Archives:hover/*, .Saison-2026-2027:hover*//*, .Membres-2026-2027:hover*/, .Tournois-2026-2027:hover, .Stands-2026-2027:hover, .Halloween-2026-2027:hover, .Noel-2026-2027:hover, .Crepes-2026-2027:hover, .Valentin-2026-2027:hover, .Nuit-2026-2027:hover, .Triclub-2026-2027:hover, .Mentions:hover {
          border: 2px solid #990000;
         transform: scale(1.06);
     }
@@ -153,11 +153,11 @@
 
     .grille-fenetre {
         display: grid;
-        grid-template-columns: 50% 50%  minmax(0, 1fr);
+        grid-template-columns: repeat(1, minmax(0, 1fr));
         width: 100%;
         align-items: start;
         font-family: Arial, sans-serif;
-        font-size: 25px;
+        font-size: 35px;
         font-weight: bold;
         font-style: italic;
     }
@@ -169,14 +169,6 @@
         border-bottom: 2px solid transparent;
     }
 
-    .case-fenetre-1{
-	color : blue;
-    }
-
-    .case-fenetre-2 {
-	color : #A349A4;
-    }
-
     /* Deux filets transparents verticaux entre les trois colonnes. */
     .case-resultat:nth-child(3n+2),
     .case-resultat:nth-child(3n+3) {
@@ -186,16 +178,16 @@
     .case-fenetre-1 img {
         display: inline-block;
         height: auto;
-        max-width: 93%;
-        border: 5px solid blue;
-        /* border: 1px solid black;*/
+        max-width: 75%;
+        /* border: 5px solid blue; */
+
     }
 
     .case-fenetre-2 img {
         display: inline-block;
         height: auto;
-        max-width: 93%;
-        border: 5px solid #A349A4;
+        max-width: 60%;
+        /* border: 5px solid #A349A4;*/
     }
 
      .fenetre img { width: 95%; }
@@ -206,9 +198,7 @@
         .corps { grid-template-columns: 105px 2px 2px 2px minmax(0, 1fr); }
         .menu .bouton-standard { width: 90px; }
         .menu .bouton-page { width: 100px ; }
-	.grille-fenetre {font-size: clamp(25px, 4vw, 20px);}
-        .case-fenetre-1 img {max-width: 95%;}
-        .case-fenetre-2 img {max-width: 95%;}
+        .case-fenetre-1 img {max-width: 90%;}
        #titrePionForgeron {font-size: clamp(15px, 4vw, 50px); }
     }
 
@@ -225,7 +215,7 @@
             border-left: 0;
             border-bottom: 2px solid transparent;
         }
-        .case-fenetre-2 img {max-width: 100%;}
+        .case-fenetre-2,
         .case-fenetre-2:nth-child(3n+2),
         .case-fenetre-2:nth-child(3n+3) {
             border-left: 0;
@@ -289,16 +279,16 @@
             <img class="bouton-page" src="../Boutons/2026-20272.jpg" alt="Saison 2026-2027">
         </a>
 
-        <a class="Membres-2026-2027" href="../Archives 2026-2027/Membres 2026-2027.html" onmouseout="changeBouton1(4)" onmouseover="changeBouton2(4)">
-            <img class="bouton-standard" src="../Boutons/membres1.jpg" alt="Membres 2026-2027">
+        <a class="Membres-2026-2027" href="../Archives 2026-2027/Membres 2026-2027.html" onmouseout="changeBouton2(4)" onmouseover="changeBouton2(4)">
+            <img class="bouton-page" src="../Boutons/membres2.jpg" alt="Membres 2026-2027">
         </a>
 
         <a class="Tournois-2026-2027" href="../Archives 2026-2027/Tournois 2026-2027.html" onmouseout="changeBouton1(5)" onmouseover="changeBouton2(5)">
             <img class="bouton-standard" src="../Boutons/tournois1.jpg" alt="Tournois 2026-2027">
         </a>
 
-        <a class="Stands-2026-2027" href="../Archives 2026-2027/Stands 2026-2027.html" onmouseout="changeBouton2(6)" onmouseover="changeBouton2(6)">
-            <img class="bouton-page" src="../Boutons/stands2.jpg" alt="Stands 2026-2027">
+        <a class="Stands-2026-2027" href="../Archives 2026-2027/Stands 2026-2027.html" onmouseout="changeBouton1(6)" onmouseover="changeBouton2(6)">
+            <img class="bouton-standard" src="../Boutons/stands1.jpg" alt="Stands 2026-2027">
         </a>
 
         <a class="Halloween-2026-2027" href="../Archives 2026-2027/Halloween 2026-2027.html"  onmouseout="changeBouton1(7)" onmouseover="changeBouton2(7)">
@@ -331,22 +321,16 @@
             <img class="bouton-standard" src="../Boutons/mentions1.jpg" alt="Mentions légales">
         </a>
     </nav>
-  
+
     <div class="separateur-dore-vertical"></div>
     <div class="separateur-vide"></div>
     <div class="separateur-dore-vertical"></div>
 
-   <section class="fenetre" aria-label="Stands">
+   <section class="fenetre" aria-label="Membres">
         <div class="grille-fenetre">
             <div class="case-fenetre-1">
-                <img src="../Archives 2026-2027/Stands/Stand culture et sport 1.jpg" alt="Photos stands">
-                <br>Le 5 septembre 2026 à Commentry<br>
-		Fête du Sport de de la Culture	
-            </div>
-            <div class="case-fenetre-2">
-                <img src="../Archives 2026-2027/Stands/Stand culture et sport 2.jpg" alt="Photos stands">
-                <br>Le 5 septembre 2026 à Commentry<br>
-		Fête du Sport de de la Culture	
+                Au 24/09/2026 <br>
+                <img class="bouton-page" src="../Archives 2026-2027/Membres/Membres.jpg" alt="Membres 2026-2027">
             </div>
         </div>
     </section>
@@ -362,4 +346,3 @@
 
 </body>
 </html>
-					

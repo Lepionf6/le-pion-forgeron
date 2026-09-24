@@ -129,6 +129,7 @@
 	border: 1px solid black ;
     }
 
+
   /* Passage souris sur les boutons du menu */
    .Presentation, .Archives, .Saison-2026-2027, .Membres-2026-2027, .Tournois-2026-2027, .Stands-2026-2027, .Halloween-2026-2027, .Noel-2026-2027, .Crepes-2026-2027, .Valentin-2026-2027, .Nuit-2026-2027, .Triclub-2026-2027, .Mentions{
         display: inline-block;
@@ -136,7 +137,7 @@
         transition: transform .25s ease, border-color .25s ease;
     }
 
-   .Presentation:hover, .Archives:hover/*, .Saison-2026-2027:hover*/, .Membres-2026-2027:hover, .Tournois-2026-2027:hover/*, .Stands-2026-2027:hover*/, .Halloween-2026-2027:hover, .Noel-2026-2027:hover, .Crepes-2026-2027:hover, .Valentin-2026-2027:hover, .Nuit-2026-2027:hover, .Triclub-2026-2027:hover, .Mentions:hover {
+   .Presentation:hover, .Archives:hover/*, .Saison-2026-2027:hover*/, .Membres-2026-2027:hover/*, .Tournois-2026-2027:hover*/, .Stands-2026-2027:hover, .Halloween-2026-2027:hover, .Noel-2026-2027:hover, .Crepes-2026-2027:hover, .Valentin-2026-2027:hover, .Nuit-2026-2027:hover, .Triclub-2026-2027:hover, .Mentions:hover {
          border: 2px solid #990000;
         transform: scale(1.06);
     }
@@ -153,13 +154,9 @@
 
     .grille-fenetre {
         display: grid;
-        grid-template-columns: 50% 50%  minmax(0, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         width: 100%;
         align-items: start;
-        font-family: Arial, sans-serif;
-        font-size: 25px;
-        font-weight: bold;
-        font-style: italic;
     }
 
     .case-fenetre-1, .case-fenetre-2 {
@@ -167,14 +164,6 @@
         text-align: center;
         padding: 10px 8px;
         border-bottom: 2px solid transparent;
-    }
-
-    .case-fenetre-1{
-	color : blue;
-    }
-
-    .case-fenetre-2 {
-	color : #A349A4;
     }
 
     /* Deux filets transparents verticaux entre les trois colonnes. */
@@ -187,15 +176,14 @@
         display: inline-block;
         height: auto;
         max-width: 93%;
-        border: 5px solid blue;
-        /* border: 1px solid black;*/
+       /* border: 1px solid black;*/
     }
 
     .case-fenetre-2 img {
         display: inline-block;
         height: auto;
-        max-width: 93%;
-        border: 5px solid #A349A4;
+        max-width: 60%;
+        /* border: 5px solid #A349A4;*/
     }
 
      .fenetre img { width: 95%; }
@@ -206,9 +194,7 @@
         .corps { grid-template-columns: 105px 2px 2px 2px minmax(0, 1fr); }
         .menu .bouton-standard { width: 90px; }
         .menu .bouton-page { width: 100px ; }
-	.grille-fenetre {font-size: clamp(25px, 4vw, 20px);}
         .case-fenetre-1 img {max-width: 95%;}
-        .case-fenetre-2 img {max-width: 95%;}
        #titrePionForgeron {font-size: clamp(15px, 4vw, 50px); }
     }
 
@@ -225,7 +211,7 @@
             border-left: 0;
             border-bottom: 2px solid transparent;
         }
-        .case-fenetre-2 img {max-width: 100%;}
+        .case-fenetre-2,
         .case-fenetre-2:nth-child(3n+2),
         .case-fenetre-2:nth-child(3n+3) {
             border-left: 0;
@@ -293,12 +279,12 @@
             <img class="bouton-standard" src="../Boutons/membres1.jpg" alt="Membres 2026-2027">
         </a>
 
-        <a class="Tournois-2026-2027" href="../Archives 2026-2027/Tournois 2026-2027.html" onmouseout="changeBouton1(5)" onmouseover="changeBouton2(5)">
-            <img class="bouton-standard" src="../Boutons/tournois1.jpg" alt="Tournois 2026-2027">
+        <a class="Tournois-2026-2027" href="../Archives 2026-2027/Tournois 2026-2027.html" onmouseout="changeBouton2(5)" onmouseover="changeBouton2(5)">
+            <img class="bouton-page" src="../Boutons/tournois2.jpg" alt="Tournois 2026-2027">
         </a>
 
-        <a class="Stands-2026-2027" href="../Archives 2026-2027/Stands 2026-2027.html" onmouseout="changeBouton2(6)" onmouseover="changeBouton2(6)">
-            <img class="bouton-page" src="../Boutons/stands2.jpg" alt="Stands 2026-2027">
+        <a class="Stands-2026-2027" href="../Archives 2026-2027/Stands 2026-2027.html" onmouseout="changeBouton1(6)" onmouseover="changeBouton2(6)">
+            <img class="bouton-standard" src="../Boutons/stands1.jpg" alt="Stands 2026-2027">
         </a>
 
         <a class="Halloween-2026-2027" href="../Archives 2026-2027/Halloween 2026-2027.html"  onmouseout="changeBouton1(7)" onmouseover="changeBouton2(7)">
@@ -336,20 +322,81 @@
     <div class="separateur-vide"></div>
     <div class="separateur-dore-vertical"></div>
 
-   <section class="fenetre" aria-label="Stands">
+   <section class="fenetre" aria-label="Tournois">
         <div class="grille-fenetre">
             <div class="case-fenetre-1">
-                <img src="../Archives 2026-2027/Stands/Stand culture et sport 1.jpg" alt="Photos stands">
-                <br>Le 5 septembre 2026 à Commentry<br>
-		Fête du Sport de de la Culture	
+                <img src="../Archives 2026-2027/Tournois/Calendrier Regionale.jpg" alt="Résultat Régionale">
             </div>
-            <div class="case-fenetre-2">
-                <img src="../Archives 2026-2027/Stands/Stand culture et sport 2.jpg" alt="Photos stands">
-                <br>Le 5 septembre 2026 à Commentry<br>
-		Fête du Sport de de la Culture	
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Calendrier Criterium.jpg" alt="Résultat Critérium">
+            </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi1.jpg" alt="Résultat tournoi 1">
             </div>
         </div>
+
+        <div class="grille-fenetre">
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi2.jpg" alt="Résultat tournoi 2">
+            </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi3.jpg" alt="Résultat tournoi 3">
+            </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi4.jpg" alt="Résultat tournoi 4">
+            </div>
+        </div>
+
+        <div class="grille-fenetre">
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi5.jpg" alt="Résultat tournoi 5">
+            </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi6.jpg" alt="Résultat tournoi 6">
+            </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi7.jpg" alt="Résultat tournoi 7">
+            </div>
+        </div>
+
+        <div class="grille-fenetre">
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi8.jpg" alt="Résultat tournoi 8">
+            </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi9.jpg" alt="Résultat tournoi 9">
+            </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi10.jpg" alt="Résultat tournoi 10">
+            </div>
+        </div>
+
+        <div class="grille-fenetre">
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi11.jpg" alt="Résultat tournoi 11">
+            </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi12.jpg" alt="Résultat tournoi 12">
+	    </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi13.jpg" alt="Résultat tournoi 13">
+            </div>
+	</div>
+
+        <div class="grille-fenetre">
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi14.jpg" alt="Résultat tournoi 14">
+            </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi15.jpg" alt="Résultat tournoi 15">
+	    </div>
+            <div class="case-fenetre-1">
+                <img src="../Archives 2026-2027/Tournois/Tournoi16.jpg" alt="Résultat tournoi 16">
+            </div>         
+        </div>
+
     </section>
+
 </main>
 
 <!-- Deux filets dorés de bas de page -->
