@@ -1,12 +1,9 @@
 //chargement des images du dernier événement et de l'avant-dernier évenement
 var image1 = new Array();
 
-for (var i = 0; i<4; i++ ) {image1[i] = new Image();}
-image1[0].src = "Photos/Culture sports 1.jpg";
-image1[1].src = "Photos/Culture sports 2.jpg";
-image1[2].src = "Photos/Culture sports 3.jpg";
-image1[3].src = "Photos/Culture sports 4.jpg";
-
+for (var i = 0; i<2; i++ ) {image1[i] = new Image();}
+image1[0].src = "Photos/Affiche.png";
+image1[1].src = "Photos/Affiche 1.jpg";
 
 //duree de changement d'images
 delaiImage1 = 4.;var numeroImage1 = 0;
