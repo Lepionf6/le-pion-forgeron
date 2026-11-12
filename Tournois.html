@@ -174,15 +174,15 @@
     .case-fenetre-1 img {
         display: inline-block;
         height: auto;
-        max-width: 100%;
-        border: 3px solid white;
+        max-width: 93%;
+        border: 1px solid black;
     }
 
     .case-fenetre-2 img {
         display: inline-block;
         height: auto;
-        max-width: 90%;
-        border: 5px solid #A349A4;
+        max-width: 93%;
+        border: 5px solid white;
     }
 
      .fenetre img { width: 95%; }
@@ -193,6 +193,8 @@
         .corps { grid-template-columns: 105px 2px 2px 2px minmax(0, 1fr); }
         .menu .bouton-standard { width: 90px; }
         .menu .bouton-page { width: 100px ; }
+        .case-fenetre-1 img {max-width: 95%;}
+        .case-fenetre-2 img {max-width: 95%;}
         #titrePionForgeron {font-size: clamp(15px, 4vw, 50px); }
     }
 
@@ -203,13 +205,13 @@
         .menu .bouton-standard { width: 88px; }
         .menu .bouton-page { width: 95px ; }
         .grille-fenetre { grid-template-columns: 1fr; }
-        .case-fenetre-1,
+        .case-fenetre-1 img {max-width: 100%;}
         .case-fenetre-1:nth-child(3n+2),
         .case-fenetre-1:nth-child(3n+3) {
             border-left: 0;
             border-bottom: 2px solid transparent;
         }
-        .case-fenetre-2,
+        .case-fenetre-2 img {max-width: 100%;}
         .case-fenetre-2:nth-child(3n+2),
         .case-fenetre-2:nth-child(3n+3) {
             border-left: 0;
@@ -297,32 +299,33 @@
     <section class="fenetre" aria-label="Résultats des tournois">
         <div class="grille-fenetre">
             <div class="case-fenetre-1">
-                <img src="Archives 2026-2027/Tournois/Calendrier Regionale.jpg" alt="Calendrier Régionale">
+                <img src="Archives 2026-2027/Tournois/Regionale Ronde 1.jpg" alt="Calendrier Régionale">
             </div>
             <div class="case-fenetre-1">
-                <img src="Archives 2026-2027/Tournois/Calendrier Criterium.jpg" alt="Calendrier Critérium">
+                <img src="Archives 2026-2027/Tournois/Criterium Ronde 1.jpg" alt="Calendrier Critérium">
             </div>
-            <div class="case-fenetre-1">
-                <img src="Archives 2026-2027/Tournois/Tournoi4.jpg" alt="Résultat tournoi">
+            <div class="case-fenetre-2">
+                <img src="Archives 2026-2027/Tournois/Tournoi5.jpg" alt="Résultat tournoi">
             </div>
+
            <div class="case-fenetre-1">
                 <img src="Archives 2026-2027/Tournois/Resultats Regionale.jpg" alt="Résultats Régionale">
             </div>
             <div class="case-fenetre-1">
                 <img src="Archives 2026-2027/Tournois/Resultats Criterium.jpg" alt="Résultats Critérium">
             </div>
-            <div class="case-fenetre-1">
+            <div class="case-fenetre-2">
+                <img src="Archives 2026-2027/Tournois/Tournoi4.jpg" alt="Résultat tournoi">
+            </div>   
+
+            <div class="case-fenetre-2">
                 <img src="Archives 2026-2027/Tournois/Tournoi3.jpg" alt="Résultat tournoi">
             </div>
-            <div class="case-fenetre-1">
+            <div class="case-fenetre-2">
                 <img src="Archives 2026-2027/Tournois/Tournoi2.jpg" alt="Résultat tournoi">
             </div>
-            <div class="case-fenetre-1">
+            <div class="case-fenetre-2">
                 <img src="Archives 2026-2027/Tournois/Tournoi1.jpg" alt="Résultat tournoi">
-            </div>
-
-            <div class="case-fenetre-1">
-                <img src="Archives 2025-2026/Tournois/Tournoi16.jpg" alt="Résultat tournoi">
             </div>
 
     </section>
@@ -334,6 +337,7 @@
 <div class="filet-dore"></div>
 
 <script src="Boutons.js" type="text/javascript"></script>
+<script src="ImagesEquipe.js" type="text/javascript"></script>
 <script src="titre.js" type="text/javascript"></script>
 
 </body>
